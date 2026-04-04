@@ -1,0 +1,230 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e4]:
+      - link "AmiSa" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "AmiSa" [ref=e8]
+      - generic [ref=e9]:
+        - link [ref=e10] [cursor=pointer]:
+          - /url: mailto:amisa.interiordesign70@gmail.com
+          - img [ref=e11]
+        - button "Open menu" [ref=e14] [cursor=pointer]:
+          - img [ref=e15]
+  - region [ref=e21]:
+    - list [ref=e22]:
+      - group "1 of 1" [ref=e23]
+  - generic [ref=e27]:
+    - generic [ref=e29]:
+      - generic [ref=e32]:
+        - generic [ref=e34]: 
+        - paragraph [ref=e35]: KNOWLEDGEABLE
+        - paragraph [ref=e36]: You can be confident that I will deliver the professional assistance and exceptional customer service you deserve.
+      - generic [ref=e41]:
+        - generic [ref=e43]: 
+        - paragraph [ref=e44]: CERTIFIED PROFESSIONAL
+        - paragraph [ref=e45]: I am hard working and willing to help you with any questions you may have.
+    - generic [ref=e46]:
+      - paragraph [ref=e47]: ABOUT ME
+      - heading "Enhance the beauty of your home with wall designs!" [level=1] [ref=e48]
+      - paragraph [ref=e49]:
+        - link "AmiSa" [ref=e50] [cursor=pointer]:
+          - /url: /contact
+        - text: is an
+        - link "interior wall design company" [ref=e51] [cursor=pointer]:
+          - /url: /accent-wall-designs
+        - text: that offers professional
+        - link "interior design" [ref=e52] [cursor=pointer]:
+          - /url: /interior-designs
+        - text: services in
+        - link "Houston, TX" [ref=e53] [cursor=pointer]:
+          - /url: https://maps.app.goo.gl/v1U8C82jGmb5QwccA
+        - text: ", and the surrounding area. Specializing in"
+        - link "decorative wall design" [ref=e54] [cursor=pointer]:
+          - /url: /accent-wall-designs
+        - text: s, I can help turn your vision into a reality as I tailor my services to each project's specifications and guarantee superior results and complete customer satisfaction. You can rest assured that I am a transparent, hardworking, and reliable
+        - link "wall design contractor" [ref=e55] [cursor=pointer]:
+          - /url: /accent-wall-designs
+        - text: with good quality service, so whatever job you've got, just let me know, and I will take care of it. Call me today!
+      - button "About Us" [ref=e56] [cursor=pointer]
+  - generic [ref=e57]:
+    - generic [ref=e58]:
+      - paragraph [ref=e59]: FEATURED WORK
+      - heading "What I Offer" [level=1] [ref=e60]
+    - region [ref=e61]:
+      - list [ref=e62]:
+        - group [ref=e63]:
+          - generic [ref=e65]:
+            - heading [level=1] [ref=e66]: Accent Wall Design
+            - paragraph [ref=e67]: Custom accent wall design brings depth, texture, and visual interest to any room while reflecting your personal style.
+        - group "2 of 5" [ref=e68]:
+          - generic [ref=e70]:
+            - heading "Interior Design" [level=1] [ref=e71]
+            - paragraph [ref=e72]: Professional interior design transforms a space into a cohesive, functional, and visually appealing environment tailored to your preferences.
+        - group [ref=e73]:
+          - generic [ref=e75]:
+            - heading [level=1] [ref=e76]: Home Design
+            - paragraph [ref=e77]: Thoughtful home design enhances the layout and aesthetics of a living space, ensuring comfort, balance, and style.
+        - group [ref=e78]:
+          - generic [ref=e80]:
+            - heading [level=1] [ref=e81]: Home Improvement
+            - paragraph [ref=e82]: Expert home improvement elevates interiors through quality craftsmanship and attention to detail.
+        - group [ref=e83]:
+          - generic [ref=e85]:
+            - heading [level=1] [ref=e86]: Interior Wall Painting Service
+            - paragraph [ref=e87]: Precise interior wall painting service delivers clean finishes and careful execution that complements your overall interior design.
+      - button "Previous slide" [ref=e88] [cursor=pointer]:
+        - img [ref=e89]
+      - button "Next slide" [ref=e91] [cursor=pointer]:
+        - img [ref=e92]
+  - generic [ref=e99]:
+    - paragraph [ref=e100]: High-Quality Interior Wall Painting Services
+    - heading "Quality Craftsmanship for Interior Wall Projects" [level=1] [ref=e101]
+    - paragraph [ref=e102]:
+      - text: At AmiSa, I specialize in
+      - link "custom accent wall design" [ref=e103] [cursor=pointer]:
+        - /url: /accent-wall-designs
+      - text: s and
+      - link "interior wall painting services" [ref=e104] [cursor=pointer]:
+        - /url: /interior-wall-painting-services
+      - text: tailored to my client's preferences. In addition, I also offer comprehensive
+      - link "home improvement services" [ref=e105] [cursor=pointer]:
+        - /url: /home-improvements
+      - text: ", mainly"
+      - link "home design" [ref=e106] [cursor=pointer]:
+        - /url: /home-designs
+      - text: ing and
+      - link "home decor" [ref=e107] [cursor=pointer]:
+        - /url: /home-designs
+      - text: ating.
+      - text: At AmiSa, I provide the utmost quality service with unparalleled craftsmanship and attention to detail. Whether you require
+      - link "accent wall design" [ref=e108] [cursor=pointer]:
+        - /url: /accent-wall-designs
+      - text: s or wall painting, I can perform according to your specifications. I promise you an excellent customer experience and superior quality work, so for more information about my offered services, contact me at AmiSa today!
+    - button "ABOUT" [ref=e109] [cursor=pointer]
+  - generic [ref=e112]:
+    - generic [ref=e113]:
+      - paragraph [ref=e114]: ABOUT AmiSa
+      - heading "Why AmiSa?" [level=1] [ref=e115]
+    - generic [ref=e117]:
+      - generic [ref=e119]:
+        - generic:
+          - heading [level=1]
+        - generic [ref=e121]: 
+        - heading "COMPLETE TRANSPARENCY" [level=2] [ref=e122]
+        - paragraph [ref=e123]: Every service is completed in a timely manner with full transparency throughout the process.
+      - generic [ref=e125]:
+        - generic:
+          - heading [level=1]
+        - generic [ref=e127]:  
+        - heading "FLEXIBLE SCHEDULING" [level=2] [ref=e128]
+        - paragraph [ref=e129]: Flexible scheduling, including weekends, is available for added convenience.
+      - generic [ref=e131]:
+        - generic:
+          - heading [level=1]
+        - generic [ref=e133]: 
+        - heading "REASONABLE PRICING" [level=2] [ref=e134]
+        - paragraph [ref=e135]: A wide range of services is offered at competitive prices to suit diverse needs and budgets.
+      - generic [ref=e137]:
+        - generic:
+          - heading [level=1]
+        - generic [ref=e139]: 
+        - heading "SATISFACTION GUARANTEED" [level=2] [ref=e140]
+        - paragraph [ref=e141]: Customer satisfaction is my top priority and I am proud to have a 5 star rating on Google and HomeAdvisor.
+      - generic [ref=e143]:
+        - generic:
+          - heading [level=1]
+        - generic [ref=e145]:  
+        - heading "EXPERIENCED INTERIOR DESIGNER" [level=2] [ref=e146]
+        - paragraph [ref=e147]: Years of industry experience ensure the ability to handle projects of any size with confidence and professionalism.
+      - generic [ref=e149]:
+        - generic:
+          - heading [level=1]
+        - generic [ref=e151]: $ $$
+        - heading "CUSTOMIZABILITY OF DESIGNS" [level=2] [ref=e152]
+        - paragraph [ref=e153]: A wide range of sizes, colors, shapes, and designs is available to meet the unique preferences of every client.
+  - generic [ref=e154]:
+    - region [ref=e158]:
+      - generic [ref=e160]:
+        - paragraph [ref=e161]: GALLERY
+        - heading "My Services" [level=1] [ref=e162]
+    - region [ref=e165]:
+      - list [ref=e166]:
+        - group "1 of 5" [ref=e167]
+        - group "2 of 5" [ref=e169]
+        - group "3 of 5" [ref=e171]
+        - group [ref=e173]
+        - group [ref=e175]
+  - generic [ref=e179]:
+    - generic [ref=e180]:
+      - generic [ref=e182]: 
+      - heading "100%" [level=1] [ref=e183]
+      - paragraph [ref=e184]: Customer Satisfaction
+    - generic [ref=e185]:
+      - generic [ref=e187]: 
+      - heading "7 Days" [level=1] [ref=e188]
+      - paragraph [ref=e189]: Availability
+    - generic [ref=e190]:
+      - generic [ref=e192]: 
+      - heading "3+ Years" [level=1] [ref=e193]
+      - paragraph [ref=e194]: Industry Experience
+  - generic [ref=e197]:
+    - generic [ref=e198]:
+      - heading "My Service Area" [level=1] [ref=e199]
+      - paragraph [ref=e200]: Houston, TX
+      - heading "Stay Connected" [level=2] [ref=e201]
+      - link [ref=e202] [cursor=pointer]:
+        - /url: https://www.yelp.com/biz/amisa-houston
+        - img [ref=e203]
+      - link [ref=e205] [cursor=pointer]:
+        - /url: https://www.instagram.com/amisa.interiordesign/
+        - img [ref=e206]
+      - link [ref=e210] [cursor=pointer]:
+        - /url: https://goo.gl/maps/1XZPRXtQiBgkdmUt9
+        - img [ref=e211]
+      - link [ref=e213] [cursor=pointer]:
+        - /url: https://ph.pinterest.com/AmiSa__/
+        - img [ref=e214]
+    - generic [ref=e216]:
+      - heading "Quick Links" [level=1] [ref=e217]
+      - generic [ref=e218]:
+        - paragraph [ref=e219]:
+          - link "About" [ref=e220] [cursor=pointer]:
+            - /url: /about
+        - paragraph [ref=e221]:
+          - link "Gallery" [ref=e222] [cursor=pointer]:
+            - /url: /gallery
+        - paragraph [ref=e223]:
+          - link "Contact" [ref=e224] [cursor=pointer]:
+            - /url: /contact
+    - generic [ref=e225]:
+      - heading "Contact Me" [level=1] [ref=e226]
+      - paragraph [ref=e227]:
+        - link [ref=e228] [cursor=pointer]:
+          - /url: tel:(408) 516-5793
+          - img [ref=e229]
+        - text: "Phone: (408) 516-5793"
+      - separator [ref=e232]
+      - paragraph [ref=e233]:
+        - link [ref=e234] [cursor=pointer]:
+          - /url: mailto:amisa.interiordesign70@gmail.com
+          - img [ref=e235]
+        - text: "Email: amisa.interiordesign70@gmail.com"
+      - separator [ref=e238]
+      - heading "Hours of Operation" [level=2] [ref=e239]
+      - paragraph [ref=e240]:
+        - text: "SUN: 8AM - 5PM"
+        - text: "MON: 8AM - 5PM"
+        - text: "TUE: 8AM - 5PM"
+        - text: "WED: 8AM - 5PM"
+        - text: "THURS: 8AM - 5PM"
+        - text: "FRI: 8AM - 5PM"
+        - text: "SAT: 8AM - 5PM"
+  - generic [ref=e241]:
+    - paragraph [ref=e242]: Copyright © 2026 AmiSa
+    - paragraph [ref=e243]:
+      - text: All Rights Reserved.
+      - link "Sitemap" [ref=e245] [cursor=pointer]:
+        - /url: /sitemap.xml
+      - text: .
+      - link "Accessibility Statement" [ref=e247] [cursor=pointer]:
+        - /url: /accessibility_page

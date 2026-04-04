@@ -1,0 +1,190 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "AmiSa Interior Wall Design" [ref=e4] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=e5]: AmiSa
+        - generic [ref=e6]: Interior Wall Design
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "Home" [ref=e9] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=e10]:
+          - link "About" [ref=e11] [cursor=pointer]:
+            - /url: about.html
+        - listitem [ref=e12]:
+          - link "Services" [ref=e13] [cursor=pointer]:
+            - /url: services.html
+        - listitem [ref=e14]:
+          - link "Gallery" [ref=e15] [cursor=pointer]:
+            - /url: gallery.html
+        - listitem [ref=e16]:
+          - link "Reviews" [ref=e17] [cursor=pointer]:
+            - /url: testimonials.html
+        - listitem [ref=e18]:
+          - link "Contact" [ref=e19] [cursor=pointer]:
+            - /url: contact.html
+      - link "Get Free Quote" [ref=e20] [cursor=pointer]:
+        - /url: contact.html
+  - generic:
+    - link "Home":
+      - /url: index.html
+    - link "About":
+      - /url: about.html
+    - link "Services":
+      - /url: services.html
+    - link "Gallery":
+      - /url: gallery.html
+    - link "Reviews":
+      - /url: testimonials.html
+    - link "Contact":
+      - /url: contact.html
+    - generic:
+      - link "408-516-5793":
+        - /url: tel:+14085165793
+  - generic [ref=e22]:
+    - generic [ref=e23]: Social Proof
+    - heading "What Our Clients Say" [level=1] [ref=e24]:
+      - text: What Our Clients
+      - emphasis [ref=e25]: Say
+    - paragraph [ref=e26]: Real reviews from Houston homeowners who trusted AmiSa to transform their spaces.
+  - generic [ref=e29]:
+    - generic [ref=e30]:
+      - generic [ref=e31]: "5.0"
+      - generic [ref=e32]: ★★★★★
+      - generic [ref=e33]: Average Rating
+    - generic [ref=e35]:
+      - generic [ref=e36]: 3+
+      - generic [ref=e37]: Happy Clients
+    - generic [ref=e39]:
+      - generic [ref=e40]: HTX
+      - generic [ref=e41]: Houston Based
+  - generic [ref=e43]:
+    - generic [ref=e44]:
+      - generic [ref=e45]: Client Reviews
+      - heading "Real Words From Real Houston Homeowners" [level=2] [ref=e46]:
+        - text: Real Words From
+        - text: Real Houston Homeowners
+      - paragraph [ref=e47]: The reviews below are from our clients. Replace these placeholders with your actual Google reviews or client testimonials.
+    - generic [ref=e48]:
+      - generic [ref=e49]:
+        - generic [ref=e50]: ★★★★★
+        - paragraph [ref=e51]: "\"AmiSa completely transformed our master bedroom. The accent wall is stunning — every guest asks about it. The attention to detail and professionalism was beyond what we expected."
+        - generic [ref=e52]:
+          - generic [ref=e53]: M
+          - generic [ref=e54]:
+            - generic [ref=e55]: Maria L.
+            - generic [ref=e56]: Bedroom Accent Wall · Houston, TX
+      - generic [ref=e57]:
+        - generic [ref=e58]: ★★★★★
+        - paragraph [ref=e59]: "\"We hired AmiSa for our living room and couldn't be happier. The geometric wall design tied the whole room together. Quick, clean, and exactly what we envisioned."
+        - generic [ref=e60]:
+          - generic [ref=e61]: J
+          - generic [ref=e62]:
+            - generic [ref=e63]: James & Priya T.
+            - generic [ref=e64]: Living Room Design · Houston Heights
+      - generic [ref=e65]:
+        - generic [ref=e66]: ★★★★★
+        - paragraph [ref=e67]: "\"Professional, creative, and incredibly talented. AmiSa listened to every detail of what I wanted and delivered something even better than I imagined."
+        - generic [ref=e68]:
+          - generic [ref=e69]: S
+          - generic [ref=e70]:
+            - generic [ref=e71]: Sarah K.
+            - generic [ref=e72]: Home Office Transformation · Sugar Land
+      - generic [ref=e73]:
+        - generic [ref=e74]: ★★★★★
+        - paragraph [ref=e75]: "\"Our kids' room went from plain white walls to the most magical space. My daughter cries happy tears every time she sees it. AmiSa has a true gift."
+        - generic [ref=e76]:
+          - generic [ref=e77]: A
+          - generic [ref=e78]:
+            - generic [ref=e79]: Ashley R.
+            - generic [ref=e80]: Kids Room Design · Katy, TX
+      - generic [ref=e81]:
+        - generic [ref=e82]: ★★★★★
+        - paragraph [ref=e83]: "\"Hired AmiSa for an accent wall in our dining room before a dinner party. It was the talk of the evening. Will be hiring again for the rest of the house."
+        - generic [ref=e84]:
+          - generic [ref=e85]: D
+          - generic [ref=e86]:
+            - generic [ref=e87]: David M.
+            - generic [ref=e88]: Dining Room Accent Wall · River Oaks
+      - generic [ref=e89]:
+        - generic [ref=e90]: ★★★★★
+        - paragraph [ref=e91]: "\"From the first consultation to the finished product, everything was smooth and professional. The result exceeded our expectations — worth every penny."
+        - generic [ref=e92]:
+          - generic [ref=e93]: L
+          - generic [ref=e94]:
+            - generic [ref=e95]: Lauren & Chris W.
+            - generic [ref=e96]: Full Home Refresh · Pearland, TX
+    - generic [ref=e97]:
+      - paragraph [ref=e98]: Want to leave a review? We'd love to hear from you.
+      - paragraph [ref=e99]: Add your Google Business review link above in the HTML comment to activate this button.
+  - generic [ref=e100]:
+    - generic [ref=e101]: Join Them
+    - heading "Ready to Love Your Home?" [level=2] [ref=e102]:
+      - text: Ready to Love
+      - text: Your Home?
+    - paragraph [ref=e103]: Book your free consultation — the first step toward a transformation your guests will talk about.
+    - generic [ref=e104]:
+      - link "Book Free Consultation" [ref=e105] [cursor=pointer]:
+        - /url: contact.html
+      - link "See The Work" [ref=e106] [cursor=pointer]:
+        - /url: gallery.html
+    - link "408-516-5793" [ref=e107] [cursor=pointer]:
+      - /url: tel:+14085165793
+  - contentinfo [ref=e108]:
+    - generic [ref=e109]:
+      - generic [ref=e110]:
+        - generic [ref=e111]: AmiSa
+        - paragraph [ref=e112]: Custom accent wall designs and interior wall painting in Houston, TX.
+        - link "Instagram" [ref=e114] [cursor=pointer]:
+          - /url: https://www.instagram.com/amisa.interiordesign/
+          - img [ref=e115]
+      - generic [ref=e117]:
+        - heading "Navigation" [level=4] [ref=e118]
+        - list [ref=e119]:
+          - listitem [ref=e120]:
+            - link "Home" [ref=e121] [cursor=pointer]:
+              - /url: index.html
+          - listitem [ref=e122]:
+            - link "About" [ref=e123] [cursor=pointer]:
+              - /url: about.html
+          - listitem [ref=e124]:
+            - link "Services" [ref=e125] [cursor=pointer]:
+              - /url: services.html
+          - listitem [ref=e126]:
+            - link "Gallery" [ref=e127] [cursor=pointer]:
+              - /url: gallery.html
+          - listitem [ref=e128]:
+            - link "Contact" [ref=e129] [cursor=pointer]:
+              - /url: contact.html
+      - generic [ref=e130]:
+        - heading "Services" [level=4] [ref=e131]
+        - list [ref=e132]:
+          - listitem [ref=e133]:
+            - link "Accent Wall Design" [ref=e134] [cursor=pointer]:
+              - /url: services.html#accent-walls
+          - listitem [ref=e135]:
+            - link "Interior Painting" [ref=e136] [cursor=pointer]:
+              - /url: services.html#painting
+          - listitem [ref=e137]:
+            - link "Custom Murals" [ref=e138] [cursor=pointer]:
+              - /url: services.html#murals
+          - listitem [ref=e139]:
+            - link "Home Improvements" [ref=e140] [cursor=pointer]:
+              - /url: services.html#improvements
+      - generic [ref=e141]:
+        - heading "Contact" [level=4] [ref=e142]
+        - generic [ref=e143]:
+          - generic [ref=e144]: Phone
+          - link "408-516-5793" [ref=e146] [cursor=pointer]:
+            - /url: tel:+14085165793
+        - generic [ref=e147]:
+          - generic [ref=e148]: Email
+          - link "amisa.interiordesign70@gmail.com" [ref=e150] [cursor=pointer]:
+            - /url: mailto:amisa.interiordesign70@gmail.com
+    - generic [ref=e152]:
+      - paragraph [ref=e153]: © 2025 AmiSa Interior Wall Design. All rights reserved.
+      - paragraph [ref=e154]:
+        - text: Houston, TX ·
+        - link "408-516-5793" [ref=e155] [cursor=pointer]:
+          - /url: tel:+14085165793

@@ -1,0 +1,297 @@
+- generic [active] [ref=e1]:
+  - navigation "Main navigation" [ref=e2]:
+    - generic [ref=e3]:
+      - link "AmiSa Home" [ref=e4] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=e5]: AmiSa
+        - generic [ref=e6]: Interior Wall Design
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "Home" [ref=e9] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=e10]:
+          - link "About" [ref=e11] [cursor=pointer]:
+            - /url: about.html
+        - listitem [ref=e12]:
+          - link "Services" [ref=e13] [cursor=pointer]:
+            - /url: services.html
+        - listitem [ref=e14]:
+          - link "Gallery" [ref=e15] [cursor=pointer]:
+            - /url: gallery.html
+        - listitem [ref=e16]:
+          - link "Reviews" [ref=e17] [cursor=pointer]:
+            - /url: testimonials.html
+        - listitem [ref=e18]:
+          - link "Contact" [ref=e19] [cursor=pointer]:
+            - /url: contact.html
+      - link "Get Free Quote" [ref=e20] [cursor=pointer]:
+        - /url: contact.html
+  - dialog "Mobile menu":
+    - link "Home":
+      - /url: index.html
+    - link "About":
+      - /url: about.html
+    - link "Services":
+      - /url: services.html
+    - link "Gallery":
+      - /url: gallery.html
+    - link "Reviews":
+      - /url: testimonials.html
+    - link "Contact":
+      - /url: contact.html
+    - generic:
+      - link "408-516-5793":
+        - /url: tel:+14085165793
+      - link "amisa.interiordesign70@gmail.com":
+        - /url: mailto:amisa.interiordesign70@gmail.com
+  - region "Hero" [ref=e21]:
+    - generic [ref=e23]:
+      - generic [ref=e24]: Houston, TX · Custom Wall Design
+      - heading "Your Home. Your Vision. Your Walls." [level=1] [ref=e25]:
+        - text: Your Home.
+        - text: Your
+        - emphasis [ref=e26]: Vision.
+        - text: Your Walls.
+      - paragraph [ref=e27]: Custom accent wall designs and interior wall painting, tailored to your taste. Transforming Houston homes — one wall at a time.
+      - generic [ref=e28]:
+        - link "Get Your Free Quote" [ref=e29] [cursor=pointer]:
+          - /url: contact.html
+        - link "See Our Work" [ref=e30] [cursor=pointer]:
+          - /url: gallery.html
+      - generic [ref=e31]:
+        - generic [ref=e32]:
+          - generic [ref=e33]: 50+
+          - generic [ref=e34]: Rooms Transformed
+        - generic [ref=e35]:
+          - generic [ref=e36]: Houston
+          - generic [ref=e37]: Based & Operated
+        - generic [ref=e38]:
+          - generic [ref=e39]: ★★★★★
+          - generic [ref=e40]: 5-Star Reviews
+    - generic [ref=e43]: Scroll
+  - region "Designed Around You" [ref=e44]:
+    - generic [ref=e45]:
+      - generic [ref=e46]:
+        - generic [ref=e47]: What We Do
+        - heading "Designed Around You" [level=2] [ref=e48]:
+          - text: Designed Around
+          - emphasis [ref=e49]: You
+        - paragraph [ref=e50]: Every project starts with a conversation. We listen to your vision and bring it to life — no templates, no shortcuts.
+      - generic [ref=e51]:
+        - generic [ref=e52]:
+          - generic: "01"
+          - img [ref=e53]
+          - heading "Accent Wall Design" [level=3] [ref=e56]
+          - paragraph [ref=e57]: Custom-designed accent walls that become the focal point of any room. Geometric patterns, textures, paint techniques, and architectural detail.
+          - link "Learn more →" [ref=e58] [cursor=pointer]:
+            - /url: services.html#accent-walls
+        - generic [ref=e59]:
+          - generic: "02"
+          - img [ref=e60]
+          - heading "Interior Wall Painting" [level=3] [ref=e63]
+          - paragraph [ref=e64]: Premium interior painting with flawless prep and finish. From single rooms to entire homes — clean lines, rich color, lasting results.
+          - link "Learn more →" [ref=e65] [cursor=pointer]:
+            - /url: services.html#painting
+        - generic [ref=e66]:
+          - generic: "03"
+          - img [ref=e67]
+          - heading "Custom Murals & Textures" [level=3] [ref=e70]
+          - paragraph [ref=e71]: Artistic wall treatments that go beyond paint. Hand-crafted textures, decorative patterns, and bespoke murals created just for your space.
+          - link "Learn more →" [ref=e72] [cursor=pointer]:
+            - /url: services.html#murals
+        - generic [ref=e73]:
+          - generic: "04"
+          - img [ref=e74]
+          - heading "Home Improvements" [level=3] [ref=e76]
+          - paragraph [ref=e77]: Wall-focused home improvement projects that elevate your entire interior. Refresh one room or transform the whole house.
+          - link "Learn more →" [ref=e78] [cursor=pointer]:
+            - /url: services.html#improvements
+        - generic [ref=e79]:
+          - generic: "05"
+          - img [ref=e80]
+          - heading "Design Consultation" [level=3] [ref=e82]
+          - paragraph [ref=e83]: Not sure where to start? A free one-on-one consultation to explore colors, styles, and possibilities for your home — no pressure, no obligation.
+          - link "Book free consult →" [ref=e84] [cursor=pointer]:
+            - /url: contact.html
+  - region "Fresh From the Feed" [ref=e85]:
+    - generic [ref=e86]:
+      - generic [ref=e87]:
+        - generic [ref=e88]: Recent Work
+        - heading "Fresh From the Feed" [level=2] [ref=e89]
+        - paragraph [ref=e90]: Our gallery updates automatically whenever we post new work to Instagram — what you see here is always our latest.
+      - generic [ref=e91]:
+        - img "Custom burgundy dining room accent wall design" [ref=e93]
+        - img "Black elegant dining room wall design" [ref=e95]
+        - img "Warm chevron accent wall" [ref=e97]
+        - img "Geometric staircase wall design" [ref=e99]
+        - img "Custom interior wall design Houston" [ref=e101]
+      - generic [ref=e102]:
+        - paragraph [ref=e103]: Bedrooms · Living Rooms · Accent Walls · Home Offices · Kids Rooms
+        - link "View Full Gallery →" [ref=e104] [cursor=pointer]:
+          - /url: gallery.html
+  - region "From Vision to Reality" [ref=e105]:
+    - generic [ref=e106]:
+      - generic [ref=e107]:
+        - generic [ref=e108]: How It Works
+        - heading "From Vision to Reality" [level=2] [ref=e109]
+        - paragraph [ref=e110]: A simple three-step process — designed to be easy for you, exceptional in results.
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - generic [ref=e113]: "01"
+          - heading "Free Consultation" [level=3] [ref=e114]
+          - paragraph [ref=e115]: We sit down together — in person or virtually — to talk about your space, your style, and your vision. No cost, no obligation.
+        - generic [ref=e116]:
+          - generic [ref=e117]: "02"
+          - heading "Custom Design" [level=3] [ref=e118]
+          - paragraph [ref=e119]: We create a tailored design plan for your space — colors, patterns, materials — all built around what you love.
+        - generic [ref=e120]:
+          - generic [ref=e121]: "03"
+          - heading "Professional Installation" [level=3] [ref=e122]
+          - paragraph [ref=e123]: We handle everything from prep to final touch. Clean, precise, and respectful of your home. You just enjoy the result.
+      - link "Schedule Your Free Consultation" [ref=e125] [cursor=pointer]:
+        - /url: contact.html
+  - region "What Houston Homeowners Say" [ref=e126]:
+    - generic [ref=e127]:
+      - generic [ref=e128]:
+        - generic [ref=e129]: Client Stories
+        - heading "What Houston Homeowners Say" [level=2] [ref=e130]
+      - generic [ref=e131]:
+        - generic [ref=e132]:
+          - generic [ref=e133]: ★★★★★
+          - paragraph [ref=e134]: "\" AmiSa completely transformed our master bedroom. The accent wall is stunning — every guest asks about it. The attention to detail and professionalism was beyond what we expected."
+          - generic [ref=e135]:
+            - generic [ref=e136]: M
+            - generic [ref=e137]:
+              - generic [ref=e138]: Maria L.
+              - generic [ref=e139]: Bedroom Accent Wall · Houston, TX
+        - generic [ref=e140]:
+          - generic [ref=e141]: ★★★★★
+          - paragraph [ref=e142]: "\" We hired AmiSa for our living room and couldn't be happier. The geometric wall design tied the whole room together. Quick, clean, and exactly what we envisioned."
+          - generic [ref=e143]:
+            - generic [ref=e144]: J
+            - generic [ref=e145]:
+              - generic [ref=e146]: James & Priya T.
+              - generic [ref=e147]: Living Room Design · Houston Heights
+        - generic [ref=e148]:
+          - generic [ref=e149]: ★★★★★
+          - paragraph [ref=e150]: "\" Professional, creative, and incredibly talented. AmiSa listened to every detail of what I wanted and delivered something even better than I imagined."
+          - generic [ref=e151]:
+            - generic [ref=e152]: S
+            - generic [ref=e153]:
+              - generic [ref=e154]: Sarah K.
+              - generic [ref=e155]: Home Office Transformation · Sugar Land
+      - link "Read All Reviews →" [ref=e157] [cursor=pointer]:
+        - /url: testimonials.html
+  - region "The Artist Behind the Walls" [ref=e158]:
+    - generic [ref=e160]:
+      - generic [ref=e163]:
+        - generic [ref=e164]: 🎨
+        - paragraph [ref=e165]:
+          - text: Drop your
+          - text: professional photo here
+          - code [ref=e166]: assets/owner.jpg
+      - generic [ref=e168]:
+        - generic [ref=e169]: About AmiSa
+        - heading "The Artist Behind the Walls" [level=2] [ref=e170]:
+          - text: The Artist
+          - text: Behind the Walls
+        - paragraph [ref=e171]: At AmiSa, I specialize in custom accent wall designs and interior wall painting services tailored to each client's unique preferences. Based in Houston, TX, I believe that the right wall design can transform not just a room — but the way you feel in your home.
+        - paragraph [ref=e172]: Every project is personal. I work closely with you from the first consultation through final installation, ensuring the result reflects your vision — not a template.
+        - link "Meet the Artist →" [ref=e173] [cursor=pointer]:
+          - /url: about.html
+  - region "Business statistics" [ref=e174]:
+    - generic [ref=e175]:
+      - generic [ref=e176]: 50+
+      - generic [ref=e177]: Rooms Transformed
+    - generic [ref=e178]:
+      - generic [ref=e179]: 5★
+      - generic [ref=e180]: Average Rating
+    - generic [ref=e181]:
+      - generic [ref=e182]: 40+
+      - generic [ref=e183]: Happy Houston Clients
+    - generic [ref=e184]:
+      - generic [ref=e185]: HTX
+      - generic [ref=e186]: Locally Owned & Operated
+  - region "Transform Your Space Today" [ref=e187]:
+    - generic [ref=e188]: Ready to Start?
+    - heading "Transform Your Space Today" [level=2] [ref=e189]
+    - paragraph [ref=e190]: Get a free, no-commitment design consultation. We'll talk through your vision and show you what's possible.
+    - generic [ref=e191]:
+      - link "Schedule Free Consultation" [ref=e192] [cursor=pointer]:
+        - /url: contact.html
+      - link "Browse Gallery First" [ref=e193] [cursor=pointer]:
+        - /url: gallery.html
+    - link "408-516-5793" [ref=e194] [cursor=pointer]:
+      - /url: tel:+14085165793
+  - contentinfo "Site footer" [ref=e195]:
+    - generic [ref=e196]:
+      - generic [ref=e197]:
+        - generic [ref=e198]: AmiSa
+        - paragraph [ref=e199]: Custom accent wall designs and interior wall painting in Houston, TX. Your home. Your vision. Your walls.
+        - link "Instagram" [ref=e201] [cursor=pointer]:
+          - /url: https://www.instagram.com/amisa.interiordesign/
+          - img [ref=e202]
+      - generic [ref=e204]:
+        - heading "Navigation" [level=4] [ref=e205]
+        - list [ref=e206]:
+          - listitem [ref=e207]:
+            - link "Home" [ref=e208] [cursor=pointer]:
+              - /url: index.html
+          - listitem [ref=e209]:
+            - link "About" [ref=e210] [cursor=pointer]:
+              - /url: about.html
+          - listitem [ref=e211]:
+            - link "Services" [ref=e212] [cursor=pointer]:
+              - /url: services.html
+          - listitem [ref=e213]:
+            - link "Gallery" [ref=e214] [cursor=pointer]:
+              - /url: gallery.html
+          - listitem [ref=e215]:
+            - link "Reviews" [ref=e216] [cursor=pointer]:
+              - /url: testimonials.html
+          - listitem [ref=e217]:
+            - link "Contact" [ref=e218] [cursor=pointer]:
+              - /url: contact.html
+      - generic [ref=e219]:
+        - heading "Services" [level=4] [ref=e220]
+        - list [ref=e221]:
+          - listitem [ref=e222]:
+            - link "Accent Wall Design" [ref=e223] [cursor=pointer]:
+              - /url: services.html#accent-walls
+          - listitem [ref=e224]:
+            - link "Interior Painting" [ref=e225] [cursor=pointer]:
+              - /url: services.html#painting
+          - listitem [ref=e226]:
+            - link "Custom Murals" [ref=e227] [cursor=pointer]:
+              - /url: services.html#murals
+          - listitem [ref=e228]:
+            - link "Home Improvements" [ref=e229] [cursor=pointer]:
+              - /url: services.html#improvements
+          - listitem [ref=e230]:
+            - link "Free Consultation" [ref=e231] [cursor=pointer]:
+              - /url: contact.html
+      - generic [ref=e232]:
+        - heading "Contact" [level=4] [ref=e233]
+        - generic [ref=e234]:
+          - generic [ref=e235]: Phone
+          - link "408-516-5793" [ref=e237] [cursor=pointer]:
+            - /url: tel:+14085165793
+        - generic [ref=e238]:
+          - generic [ref=e239]: Email
+          - link "amisa.interiordesign70@gmail.com" [ref=e241] [cursor=pointer]:
+            - /url: mailto:amisa.interiordesign70@gmail.com
+            - text: amisa.interiordesign70
+            - text: "@gmail.com"
+        - generic [ref=e242]:
+          - generic [ref=e243]: Location
+          - generic [ref=e244]: Houston, TX 77056
+        - generic [ref=e245]:
+          - generic [ref=e246]: Instagram
+          - link "@amisa.interiordesign" [ref=e248] [cursor=pointer]:
+            - /url: https://www.instagram.com/amisa.interiordesign/
+    - generic [ref=e250]:
+      - paragraph [ref=e251]: © 2025 AmiSa Interior Wall Design. All rights reserved.
+      - paragraph [ref=e252]:
+        - text: Houston, TX ·
+        - link "408-516-5793" [ref=e253] [cursor=pointer]:
+          - /url: tel:+14085165793

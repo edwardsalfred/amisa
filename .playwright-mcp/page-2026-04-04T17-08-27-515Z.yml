@@ -1,0 +1,87 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - navigation [ref=e5]:
+      - link "AmiSa" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - img "AmiSa" [ref=e9]
+      - generic [ref=e10]:
+        - link [ref=e11] [cursor=pointer]:
+          - /url: mailto:amisa.interiordesign70@gmail.com
+          - img [ref=e12]
+        - button "Open menu" [ref=e15] [cursor=pointer]:
+          - img [ref=e16]
+  - generic [ref=e22]:
+    - heading "GALLERY" [level=4] [ref=e23]
+    - heading "My Services" [level=1] [ref=e24]
+    - link "Call Now" [ref=e25] [cursor=pointer]:
+      - /url: tel:(408) 516-5793
+  - generic [ref=e27]:
+    - button [ref=e30] [cursor=pointer]
+    - button [ref=e33] [cursor=pointer]
+    - button [ref=e36] [cursor=pointer]
+    - button [ref=e39] [cursor=pointer]
+    - button [ref=e42] [cursor=pointer]
+    - button [ref=e45] [cursor=pointer]
+    - button [ref=e48] [cursor=pointer]
+    - button [ref=e51] [cursor=pointer]
+  - generic [ref=e55]:
+    - generic [ref=e56]:
+      - heading "My Service Area" [level=1] [ref=e57]
+      - paragraph [ref=e58]: Houston, TX
+      - heading "Stay Connected" [level=2] [ref=e59]
+      - link [ref=e60] [cursor=pointer]:
+        - /url: https://www.yelp.com/biz/amisa-houston
+        - img [ref=e61]
+      - link [ref=e63] [cursor=pointer]:
+        - /url: https://www.instagram.com/amisa.interiordesign/
+        - img [ref=e64]
+      - link [ref=e68] [cursor=pointer]:
+        - /url: https://goo.gl/maps/1XZPRXtQiBgkdmUt9
+        - img [ref=e69]
+      - link [ref=e71] [cursor=pointer]:
+        - /url: https://ph.pinterest.com/AmiSa__/
+        - img [ref=e72]
+    - generic [ref=e74]:
+      - heading "Quick Links" [level=1] [ref=e75]
+      - generic [ref=e76]:
+        - paragraph [ref=e77]:
+          - link "About" [ref=e78] [cursor=pointer]:
+            - /url: /about
+        - paragraph [ref=e79]:
+          - link "Gallery" [ref=e80] [cursor=pointer]:
+            - /url: /gallery
+        - paragraph [ref=e81]:
+          - link "Contact" [ref=e82] [cursor=pointer]:
+            - /url: /contact
+    - generic [ref=e83]:
+      - heading "Contact Me" [level=1] [ref=e84]
+      - paragraph [ref=e85]:
+        - link [ref=e86] [cursor=pointer]:
+          - /url: tel:(408) 516-5793
+          - img [ref=e87]
+        - text: "Phone: (408) 516-5793"
+      - separator [ref=e90]
+      - paragraph [ref=e91]:
+        - link [ref=e92] [cursor=pointer]:
+          - /url: mailto:amisa.interiordesign70@gmail.com
+          - img [ref=e93]
+        - text: "Email: amisa.interiordesign70@gmail.com"
+      - separator [ref=e96]
+      - heading "Hours of Operation" [level=2] [ref=e97]
+      - paragraph [ref=e98]:
+        - text: "SUN: 8AM - 5PM"
+        - text: "MON: 8AM - 5PM"
+        - text: "TUE: 8AM - 5PM"
+        - text: "WED: 8AM - 5PM"
+        - text: "THURS: 8AM - 5PM"
+        - text: "FRI: 8AM - 5PM"
+        - text: "SAT: 8AM - 5PM"
+  - generic [ref=e99]:
+    - paragraph [ref=e100]: Copyright © 2026 AmiSa
+    - paragraph [ref=e101]:
+      - text: All Rights Reserved.
+      - link "Sitemap" [ref=e103] [cursor=pointer]:
+        - /url: /sitemap.xml
+      - text: .
+      - link "Accessibility Statement" [ref=e105] [cursor=pointer]:
+        - /url: /accessibility_page

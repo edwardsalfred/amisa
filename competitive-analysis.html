@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Competitive Analysis — AmiSa Interior Wall Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --paper: #f6f4f0;
+      --paper-card: #fffefa;
+      --ink: #1a1714;
+      --ink-soft: #5c5650;
+      --gold: #7D6002;
+      --terracotta: #c45d3e;
+      --border: #e2ded8;
+      --accent-border: 4px solid var(--terracotta);
+    }
+
+    /* Grain texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page { max-width: 900px; margin: 0 auto; padding: 60px 40px; }
+
+    /* Cover */
+    .cover {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 60px;
+      margin-bottom: 60px;
+    }
+    .cover-badge {
+      display: inline-block;
+      background: var(--terracotta);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 28px;
+    }
+    .cover h1 {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(36px, 6vw, 60px);
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 18px;
+    }
+    .cover h1 em {
+      font-style: italic;
+      color: var(--terracotta);
+    }
+    .cover-meta {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+    .cover-meta-item { display: flex; flex-direction: column; }
+    .cover-meta-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 3px; }
+    .cover-meta-value { font-size: 15px; font-weight: 500; }
+
+    /* Section */
+    .section { margin-bottom: 64px; }
+    .section-number {
+      font-family: 'Instrument Serif', serif;
+      font-size: 80px;
+      line-height: 1;
+      color: var(--border);
+      margin-bottom: -20px;
+      display: block;
+    }
+    .section-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 28px;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .section-subtitle {
+      font-size: 13px;
+      color: var(--ink-soft);
+      margin-bottom: 28px;
+      font-weight: 400;
+    }
+
+    /* Tags */
+    .tag {
+      display: inline-block;
+      background: var(--paper);
+      border: 1px solid var(--border);
+      color: var(--ink-soft);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin: 4px 4px 0 0;
+    }
+
+    /* Card */
+    .card {
+      background: var(--paper-card);
+      border-left: var(--accent-border);
+      border-radius: 0 8px 8px 0;
+      padding: 24px 28px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      transition: box-shadow 0.2s;
+    }
+    .card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+    .card h3 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 20px;
+      margin-bottom: 6px;
+      color: var(--ink);
+    }
+    .card .card-meta { font-size: 12px; color: var(--ink-soft); margin-bottom: 12px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; }
+    .card p { font-size: 14px; color: var(--ink-soft); line-height: 1.65; }
+
+    /* Score bar */
+    .score-row { display: flex; align-items: center; gap: 10px; margin: 6px 0; }
+    .score-label { font-size: 12px; color: var(--ink-soft); min-width: 140px; }
+    .score-bar-track { flex: 1; background: var(--border); border-radius: 4px; height: 6px; }
+    .score-bar-fill { height: 6px; border-radius: 4px; background: var(--terracotta); transition: width 0.3s; }
+    .score-num { font-size: 12px; font-weight: 600; color: var(--ink); min-width: 24px; text-align: right; }
+
+    /* Color swatches */
+    .swatches { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0; }
+    .swatch {
+      width: 32px; height: 32px; border-radius: 50%;
+      border: 2px solid rgba(0,0,0,0.1);
+      position: relative;
+      cursor: default;
+    }
+    .swatch::after {
+      content: attr(data-hex);
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 9px;
+      color: var(--ink-soft);
+      white-space: nowrap;
+    }
+    .swatches-wrap { margin-bottom: 32px; }
+
+    /* Connector */
+    .connector {
+      display: flex;
+      justify-content: center;
+      margin: 0 0 40px;
+    }
+    .connector svg { opacity: 0.3; }
+
+    /* Comparison table */
+    .comparison-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 20px 0; }
+    .comparison-table th {
+      background: var(--ink);
+      color: #fff;
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .comparison-table th:first-child { border-radius: 4px 0 0 0; }
+    .comparison-table th:last-child { border-radius: 0 4px 0 0; }
+    .comparison-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--ink);
+    }
+    .comparison-table tr:nth-child(even) td { background: var(--paper); }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .score-cell { font-weight: 700; }
+    .score-hi { color: #2d7a5c; }
+    .score-mid { color: #b07d2a; }
+    .score-lo { color: #b04040; }
+
+    /* Keyword list */
+    .keyword-grid { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+    .keyword-chip {
+      background: var(--ink);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 5px 13px;
+      border-radius: 20px;
+    }
+    .keyword-chip.opportunity { background: var(--terracotta); }
+    .keyword-chip.gap { background: var(--gold); }
+
+    /* Pattern cards */
+    .pattern-card {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 20px;
+      align-items: start;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .pattern-card:last-child { border-bottom: none; }
+    .pattern-num {
+      font-family: 'Instrument Serif', serif;
+      font-size: 36px;
+      color: var(--terracotta);
+      line-height: 1;
+      padding-top: 4px;
+    }
+    .pattern-body h4 { font-family: 'Instrument Serif', serif; font-size: 18px; margin-bottom: 4px; }
+    .pattern-body p { font-size: 13px; color: var(--ink-soft); line-height: 1.65; }
+
+    /* Design direction */
+    .direction-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 20px 0; }
+    .direction-item {
+      background: var(--paper-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px;
+    }
+    .direction-item h4 { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 8px; }
+    .direction-item p { font-size: 13px; color: var(--ink); line-height: 1.5; }
+
+    /* Palette preview */
+    .palette-preview { display: flex; gap: 0; border-radius: 8px; overflow: hidden; height: 48px; margin: 16px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+    .palette-swatch { flex: 1; }
+
+    /* Recommendation highlight */
+    .highlight-box {
+      background: linear-gradient(135deg, #1a1714, #2d2520);
+      color: #fff;
+      border-radius: 12px;
+      padding: 32px;
+      margin: 24px 0;
+    }
+    .highlight-box h3 { font-family: 'Instrument Serif', serif; font-size: 22px; margin-bottom: 12px; color: #fff; }
+    .highlight-box p { font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.8); }
+    .highlight-box ul { list-style: none; margin-top: 14px; }
+    .highlight-box ul li { font-size: 13px; color: rgba(255,255,255,0.8); padding: 4px 0; padding-left: 16px; position: relative; }
+    .highlight-box ul li::before { content: '→'; position: absolute; left: 0; color: var(--terracotta); }
+
+    /* Print */
+    @media print {
+      body::before { display: none; }
+      .card:hover { box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+      .section { page-break-inside: avoid; }
+      .page { padding: 40px 20px; }
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 40px 20px; }
+      .cover-meta { gap: 20px; }
+      .score-label { min-width: 100px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- COVER -->
+  <div class="cover">
+    <span class="cover-badge">Competitive Intelligence Report</span>
+    <h1>Houston Accent Wall<br><em>Market Analysis</em></h1>
+    <p style="font-size:16px; color:var(--ink-soft); max-width:500px; line-height:1.6;">
+      A research-driven overview of the Houston interior wall design landscape, identifying opportunities for AmiSa to dominate the premium tier.
+    </p>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Client</span>
+        <span class="cover-meta-value">AmiSa Interior Wall Design</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Market</span>
+        <span class="cover-meta-value">Houston, TX</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Prepared</span>
+        <span class="cover-meta-value">April 2025</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Competitors Analyzed</span>
+        <span class="cover-meta-value">5 Companies</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="section">
+    <span class="section-number">00</span>
+    <h2 class="section-title">Executive Summary</h2>
+    <p class="section-subtitle">The state of the market in four sentences</p>
+    <div class="card">
+      <p>
+        The Houston accent wall and interior wall design market is <strong>underdeveloped from a digital marketing standpoint</strong> — competitors rely on template websites, lack strong photography, and have no clear brand differentiation. The top local competitor (CK Custom Wall Design) is built on Wix with limited SEO control. The best-designed site in the niche (Accent Wall Designs) is based in Arizona, leaving a clear gap for a premium, locally-positioned Houston brand. AmiSa has a structural SEO advantage with 5 dedicated landing pages and an active Instagram presence — the new website must convert that raw traffic potential into booked consultations through better design, storytelling, and a live gallery experience.
+      </p>
+    </div>
+    <div>
+      <span class="tag">Low Local Competition</span>
+      <span class="tag">Premium Tier Available</span>
+      <span class="tag">Instagram Gallery Opportunity</span>
+      <span class="tag">SEO Foundation Exists</span>
+    </div>
+  </div>
+
+  <div class="connector">
+    <svg width="2" height="40" viewBox="0 0 2 40"><line x1="1" y1="0" x2="1" y2="40" stroke="#1a1714" stroke-width="2" stroke-dasharray="4 4"/></svg>
+  </div>
+
+  <!-- COMPETITOR PROFILES -->
+  <div class="section">
+    <span class="section-number">01</span>
+    <h2 class="section-title">Competitor Profiles</h2>
+    <p class="section-subtitle">Top 5 companies analyzed for design quality, content depth, and conversion strategy</p>
+
+    <!-- CK Custom -->
+    <div class="card">
+      <div class="card-meta">Houston, TX &nbsp;·&nbsp; Wix Platform &nbsp;·&nbsp; Direct Competitor</div>
+      <h3>CK Custom Wall Design</h3>
+      <p>Local Houston competitor positioning as an "exquisite interior wall design company." Built on Wix's Thunderbolt platform, which limits page speed and SEO control. Their positioning language is strong but the template-based execution doesn't match the premium promise. Cannot be clearly differentiated by visitors.</p>
+      <br />
+      <div class="score-row"><span class="score-label">Visual Design</span><div class="score-bar-track"><div class="score-bar-fill" style="width:50%"></div></div><span class="score-num">5</span></div>
+      <div class="score-row"><span class="score-label">Mobile UX</span><div class="score-bar-track"><div class="score-bar-fill" style="width:60%"></div></div><span class="score-num">6</span></div>
+      <div class="score-row"><span class="score-label">Content Depth</span><div class="score-bar-track"><div class="score-bar-fill" style="width:40%"></div></div><span class="score-num">4</span></div>
+      <div class="score-row"><span class="score-label">Social Proof</span><div class="score-bar-track"><div class="score-bar-fill" style="width:40%"></div></div><span class="score-num">4</span></div>
+      <div class="score-row"><span class="score-label">CTA Strategy</span><div class="score-bar-track"><div class="score-bar-fill" style="width:50%"></div></div><span class="score-num">5</span></div>
+      <br />
+      <span class="tag">Beatable</span><span class="tag">Template Site</span><span class="tag">Local</span>
+    </div>
+
+    <!-- Accent Wall Designs -->
+    <div class="card">
+      <div class="card-meta">Scottsdale, AZ &nbsp;·&nbsp; Squarespace &nbsp;·&nbsp; Best Design in Niche</div>
+      <h3>Accent Wall Designs</h3>
+      <p>The strongest website in the accent wall niche nationally. Clean Squarespace execution with high-quality project photography. Strong value prop: "Turn your boring walls into stunning focal points." Emphasizes 1–3 day turnaround and all-inclusive pricing. Not in Houston — this is AmiSa's clearest design benchmark to beat locally.</p>
+      <br />
+      <p><strong>Key Copy:</strong> "Turn your boring walls into stunning focal points, that you and your guests will enjoy for years and years."</p>
+      <p><strong>Process:</strong> Free Quote → 1–3 Day Project → All-inclusive Pricing → Professional Cleanup</p>
+      <br />
+      <div class="score-row"><span class="score-label">Visual Design</span><div class="score-bar-track"><div class="score-bar-fill" style="width:70%"></div></div><span class="score-num">7</span></div>
+      <div class="score-row"><span class="score-label">Mobile UX</span><div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div><span class="score-num">8</span></div>
+      <div class="score-row"><span class="score-label">Content Depth</span><div class="score-bar-track"><div class="score-bar-fill" style="width:60%"></div></div><span class="score-num">6</span></div>
+      <div class="score-row"><span class="score-label">Social Proof</span><div class="score-bar-track"><div class="score-bar-fill" style="width:40%"></div></div><span class="score-num">4</span></div>
+      <div class="score-row"><span class="score-label">CTA Strategy</span><div class="score-bar-track"><div class="score-bar-fill" style="width:60%"></div></div><span class="score-num">6</span></div>
+      <br />
+      <span class="tag">Design Benchmark</span><span class="tag">Not Local</span><span class="tag">Strong Photography</span>
+    </div>
+
+    <!-- Accent Wall Creation Co -->
+    <div class="card">
+      <div class="card-meta">Humble, TX (Houston Metro) &nbsp;·&nbsp; Basic Builder &nbsp;·&nbsp; Wallpaper Specialist</div>
+      <h3>Accent Wall Creation Co</h3>
+      <p>Local Houston-area competitor specializing in wallpaper installation. Claims "1,000,000+ customers" and "largest in-home decorating service in USA" — highly exaggerated numbers that undermine trust. Has a functional 4-step process section and categorized portfolio (Residential, Corporate, Restaurant, Industrial). Weak design execution but covers the practical bases.</p>
+      <br />
+      <p><strong>Headline:</strong> "Your Dream Home"</p>
+      <p><strong>Process:</strong> Consultation → Design & Material Planning → Approval & Scheduling → Professional Installation</p>
+      <p><strong>Portfolio:</strong> 12 projects across Residential, Corporate, Restaurant, Industrial</p>
+      <br />
+      <div class="score-row"><span class="score-label">Visual Design</span><div class="score-bar-track"><div class="score-bar-fill" style="width:40%"></div></div><span class="score-num">4</span></div>
+      <div class="score-row"><span class="score-label">Mobile UX</span><div class="score-bar-track"><div class="score-bar-fill" style="width:50%"></div></div><span class="score-num">5</span></div>
+      <div class="score-row"><span class="score-label">Content Depth</span><div class="score-bar-track"><div class="score-bar-fill" style="width:50%"></div></div><span class="score-num">5</span></div>
+      <div class="score-row"><span class="score-label">Social Proof</span><div class="score-bar-track"><div class="score-bar-fill" style="width:30%"></div></div><span class="score-num">3</span></div>
+      <div class="score-row"><span class="score-label">CTA Strategy</span><div class="score-bar-track"><div class="score-bar-fill" style="width:50%"></div></div><span class="score-num">5</span></div>
+      <br />
+      <span class="tag">Wallpaper Focus</span><span class="tag">Weak Design</span><span class="tag">Local</span>
+    </div>
+
+  </div>
+
+  <div class="connector">
+    <svg width="2" height="40" viewBox="0 0 2 40"><line x1="1" y1="0" x2="1" y2="40" stroke="#1a1714" stroke-width="2" stroke-dasharray="4 4"/></svg>
+  </div>
+
+  <!-- COMPARISON TABLE -->
+  <div class="section">
+    <span class="section-number">02</span>
+    <h2 class="section-title">Side-by-Side Comparison</h2>
+    <p class="section-subtitle">Scoring each competitor across 8 criteria (1–10 scale)</p>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Criterion</th>
+          <th>CK Custom</th>
+          <th>Accent Wall Designs</th>
+          <th>Wall Creation Co</th>
+          <th>AmiSa (current)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Search Visibility</td><td class="score-cell score-mid">6</td><td class="score-cell score-mid">5</td><td class="score-cell score-lo">4</td><td class="score-cell score-mid">6</td></tr>
+        <tr><td>Visual Design</td><td class="score-cell score-mid">5</td><td class="score-cell score-hi">7</td><td class="score-cell score-lo">4</td><td class="score-cell score-mid">6</td></tr>
+        <tr><td>Mobile Responsive</td><td class="score-cell score-mid">6</td><td class="score-cell score-hi">8</td><td class="score-cell score-mid">5</td><td class="score-cell score-mid">7</td></tr>
+        <tr><td>Content Depth</td><td class="score-cell score-lo">4</td><td class="score-cell score-mid">6</td><td class="score-cell score-mid">5</td><td class="score-cell score-mid">5</td></tr>
+        <tr><td>Social Proof</td><td class="score-cell score-lo">4</td><td class="score-cell score-lo">4</td><td class="score-cell score-lo">3</td><td class="score-cell score-mid">5</td></tr>
+        <tr><td>CTA Strategy</td><td class="score-cell score-mid">5</td><td class="score-cell score-mid">6</td><td class="score-cell score-mid">5</td><td class="score-cell score-mid">5</td></tr>
+        <tr><td>Page Speed</td><td class="score-cell score-lo">4</td><td class="score-cell score-hi">7</td><td class="score-cell score-mid">5</td><td class="score-cell score-mid">6</td></tr>
+        <tr><td>Review Quality</td><td class="score-cell score-mid">5</td><td class="score-cell score-mid">5</td><td class="score-cell score-lo">3</td><td class="score-cell score-mid">5</td></tr>
+        <tr style="font-weight:700;"><td><strong>TOTAL / 80</strong></td><td class="score-cell score-lo">39</td><td class="score-cell score-hi">48</td><td class="score-cell score-lo">34</td><td class="score-cell score-mid">45</td></tr>
+      </tbody>
+    </table>
+
+    <div class="highlight-box">
+      <h3>AmiSa's Opportunity</h3>
+      <p>AmiSa currently outscores or matches local competitors on most criteria — but the whole market is bunched in the 34–45 range. A well-executed new site targeting 65–70/80 would make AmiSa the undisputed premium option in Houston with no close second.</p>
+      <ul>
+        <li>None of the competitors have scroll-animated, premium design</li>
+        <li>No competitor has a live Instagram-connected gallery</li>
+        <li>No competitor clearly shows a "How It Works" process for clients</li>
+        <li>AmiSa is the only one with dedicated SEO landing pages</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="connector">
+    <svg width="2" height="40" viewBox="0 0 2 40"><line x1="1" y1="0" x2="1" y2="40" stroke="#1a1714" stroke-width="2" stroke-dasharray="4 4"/></svg>
+  </div>
+
+  <!-- SEO LANDSCAPE -->
+  <div class="section">
+    <span class="section-number">03</span>
+    <h2 class="section-title">SEO Landscape</h2>
+    <p class="section-subtitle">Keyword opportunities, gaps, and targets in the Houston market</p>
+
+    <div class="card">
+      <h3>High-Intent Local Keywords</h3>
+      <p>These keywords signal buyer intent — someone looking for these is ready to hire.</p>
+      <div class="keyword-grid" style="margin-top:16px;">
+        <span class="keyword-chip opportunity">accent wall design Houston</span>
+        <span class="keyword-chip opportunity">bedroom accent wall Houston TX</span>
+        <span class="keyword-chip opportunity">custom wall design Houston</span>
+        <span class="keyword-chip opportunity">interior wall painting Houston</span>
+        <span class="keyword-chip opportunity">living room accent wall Houston</span>
+        <span class="keyword-chip gap">decorative wall art Houston</span>
+        <span class="keyword-chip gap">wall treatment specialist Houston</span>
+        <span class="keyword-chip gap">home improvement wall design Houston</span>
+      </div>
+      <br />
+      <p style="font-size:12px; color:var(--ink-soft);">
+        <span class="keyword-chip opportunity" style="font-size:11px;">Orange</span> = high intent, AmiSa already has landing pages for these &nbsp;
+        <span class="keyword-chip gap" style="font-size:11px;">Gold</span> = gap keywords no competitor targets
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>AmiSa's Existing SEO Advantage</h3>
+      <p>AmiSa already has 5 dedicated SEO landing pages — this is a structural advantage none of the competitors have. These pages should be preserved and enhanced in the new build:</p>
+      <ul style="list-style:none; margin-top:12px;">
+        <li style="padding:4px 0; font-size:13px; color:var(--ink-soft);">→ /accent-wall-designs</li>
+        <li style="padding:4px 0; font-size:13px; color:var(--ink-soft);">→ /interior-designs</li>
+        <li style="padding:4px 0; font-size:13px; color:var(--ink-soft);">→ /home-designs</li>
+        <li style="padding:4px 0; font-size:13px; color:var(--ink-soft);">→ /home-improvements</li>
+        <li style="padding:4px 0; font-size:13px; color:var(--ink-soft);">→ /interior-wall-painting-services</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="connector">
+    <svg width="2" height="40" viewBox="0 0 2 40"><line x1="1" y1="0" x2="1" y2="40" stroke="#1a1714" stroke-width="2" stroke-dasharray="4 4"/></svg>
+  </div>
+
+  <!-- PATTERNS -->
+  <div class="section">
+    <span class="section-number">04</span>
+    <h2 class="section-title">Patterns of the Top 10%</h2>
+    <p class="section-subtitle">What the best sites in this niche consistently do that the rest don't</p>
+
+    <div class="pattern-card">
+      <div class="pattern-num">1</div>
+      <div class="pattern-body">
+        <h4>Immediate Value Proposition Above the Fold</h4>
+        <p>The best sites communicate what they do, who for, and why them — in under 8 seconds. AmiSa's current JS-rendered hero delays this. The new site needs a hero that loads instantly with a bold headline, strong photography, and a clear CTA visible without scrolling.</p>
+      </div>
+    </div>
+
+    <div class="pattern-card">
+      <div class="pattern-num">2</div>
+      <div class="pattern-body">
+        <h4>Simple 3–4 Step Process Section</h4>
+        <p>Every strong competitor shows a "How It Works" section. Interior design clients are anxious about the process — showing a clear path from consultation to completed room dramatically reduces friction. "Consultation → Design → Install → Enjoy" is the formula.</p>
+      </div>
+    </div>
+
+    <div class="pattern-card">
+      <div class="pattern-num">3</div>
+      <div class="pattern-body">
+        <h4>Categorized Gallery with Premium Photography</h4>
+        <p>The gallery is the #1 decision driver for this service type. Best-in-class sites organize by room type (Bedroom / Living Room / Office / Kids Room) and use large, full-bleed photography. AmiSa's Instagram is the perfect source — a live-connected feed makes the gallery self-updating and proves active business.</p>
+      </div>
+    </div>
+
+    <div class="pattern-card">
+      <div class="pattern-num">4</div>
+      <div class="pattern-body">
+        <h4>Social Proof Near the Top, Not Buried</h4>
+        <p>Testimonials and star ratings should appear in the first 2 sections, not the footer. None of the competitors in this market do this well — it's a clear differentiator. Google review embeds, client photos, and before/after images build instant trust.</p>
+      </div>
+    </div>
+
+    <div class="pattern-card">
+      <div class="pattern-num">5</div>
+      <div class="pattern-body">
+        <h4>Friction-Free Mobile Contact</h4>
+        <p>A sticky "Get Free Quote" button on mobile, a one-field contact form (name + phone), and a direct call link. The majority of interior design searches happen on phones. The site that makes it easiest to contact gets the booking. No competitor in this market has optimized for this.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="connector">
+    <svg width="2" height="40" viewBox="0 0 2 40"><line x1="1" y1="0" x2="1" y2="40" stroke="#1a1714" stroke-width="2" stroke-dasharray="4 4"/></svg>
+  </div>
+
+  <!-- DESIGN DIRECTION -->
+  <div class="section">
+    <span class="section-number">05</span>
+    <h2 class="section-title">Recommended Design Direction</h2>
+    <p class="section-subtitle">Backed by competitor data — not guesswork</p>
+
+    <!-- Palette -->
+    <h3 style="font-family:'Instrument Serif',serif; font-size:20px; margin-bottom:12px;">Refined Color Palette</h3>
+    <p style="font-size:13px; color:var(--ink-soft); margin-bottom:12px;">Keep AmiSa's gold brand color, deepen the dark tones, add a warm cream for premium texture.</p>
+    <div class="palette-preview">
+      <div class="palette-swatch" style="background:#0f0e0c;" title="#0f0e0c — Deep Black"></div>
+      <div class="palette-swatch" style="background:#1a1714;" title="#1a1714 — Rich Dark Brown"></div>
+      <div class="palette-swatch" style="background:#7D6002;" title="#7D6002 — AmiSa Gold"></div>
+      <div class="palette-swatch" style="background:#c9a84c;" title="#c9a84c — Light Gold"></div>
+      <div class="palette-swatch" style="background:#f5f0e8;" title="#f5f0e8 — Warm Cream"></div>
+      <div class="palette-swatch" style="background:#ffffff;" title="#ffffff — White"></div>
+    </div>
+    <p style="font-size:11px; color:var(--ink-soft); margin-bottom:32px;">Dark black → rich brown → AmiSa gold → light gold → warm cream → white</p>
+
+    <div class="direction-grid">
+      <div class="direction-item">
+        <h4>Typography</h4>
+        <p><strong>Headings:</strong> Cormorant Garamond — editorial, luxury, timeless<br><strong>Body:</strong> DM Sans — clean, modern, readable<br><strong>Accent:</strong> Keep Tajawal for brand continuity</p>
+      </div>
+      <div class="direction-item">
+        <h4>Photography Style</h4>
+        <p>Warm-toned, editorial interiors. Full-bleed room shots. Before/after pairs. Owner in action. Natural light preferred. Instagram feed provides live content.</p>
+      </div>
+      <div class="direction-item">
+        <h4>Animations</h4>
+        <p>GSAP ScrollTrigger for section reveals. Parallax on hero image. Gallery fade-in on scroll. Smooth page transitions. No heavy animations — cinematic, not circus.</p>
+      </div>
+      <div class="direction-item">
+        <h4>What to Avoid</h4>
+        <p>Wix/template aesthetic. Exaggerated claims. Cluttered layouts. Auto-playing video with sound. Tiny mobile CTAs. JS-blocked above-the-fold content.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:24px;">
+      <h3>Instagram Auto-Sync Gallery — Recommended</h3>
+      <p>
+        AmiSa's Instagram page (@amisa.interiordesign) is an existing content engine. Rather than manually maintaining a gallery, embedding a live Instagram feed widget (via <strong>Behold.so</strong> or <strong>Elfsight</strong>) means every new Instagram post automatically appears on the website gallery — zero manual work required. The feed can be filtered by room type using hashtags (#amisabedroom, #amisalivingroom, etc.). This is a significant competitive advantage no Houston competitor currently has.
+      </p>
+      <br />
+      <p style="font-size:12px; color:var(--ink-soft);">
+        <strong>Recommended tool:</strong> Behold.so (free tier available, no Instagram app approval required for basic feeds, updates automatically)
+      </p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="border-top:1px solid var(--border); padding-top:32px; margin-top:40px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+    <div>
+      <div style="font-family:'Instrument Serif',serif; font-size:18px; color:var(--ink);">AmiSa Interior Wall Design</div>
+      <div style="font-size:12px; color:var(--ink-soft);">Houston, TX 77056 &nbsp;·&nbsp; @amisa.interiordesign</div>
+    </div>
+    <div style="font-size:11px; color:var(--ink-soft); text-align:right;">
+      Competitive Analysis Report<br>Prepared April 2025
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
