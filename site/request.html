@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request an Update — AmiSa Interior Wall Design</title>
+  <meta name="description" content="Private client portal: submit a change request for the AmiSa website." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  <style>
+    .fb-wrap { max-width: 720px; margin: 0 auto; padding: 0 var(--gutter) 100px; }
+    .fb-card {
+      background: var(--dark-mid);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      padding: clamp(28px, 5vw, 48px);
+    }
+    .fb-label {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    .fb-req { color: var(--gold-light); margin-left: 4px; }
+    .fb-input, .fb-textarea {
+      width: 100%;
+      background: var(--black);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      color: var(--text-on-dark);
+      font-family: var(--font-body);
+      font-size: 15px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .fb-input:focus, .fb-textarea:focus {
+      outline: none;
+      border-color: var(--gold-light);
+      background: #131210;
+    }
+    .fb-textarea { resize: vertical; min-height: 140px; }
+    .fb-field { margin-bottom: 28px; }
+    .fb-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 28px; }
+
+    .fb-types {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+    .fb-type {
+      background: var(--black);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius);
+      padding: 16px 10px;
+      color: rgba(255,255,255,0.7);
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+      text-align: center;
+    }
+    .fb-type:hover { border-color: rgba(158,125,35,0.5); color: var(--text-on-dark); }
+    .fb-type.active {
+      border-color: var(--gold-light);
+      background: rgba(158,125,35,0.12);
+      color: var(--gold-pale);
+    }
+    .fb-type svg { width: 20px; height: 20px; }
+    .fb-type-desc { font-size: 10px; color: rgba(255,255,255,0.45); font-weight: 400; }
+
+    .fb-priorities {
+      display: flex;
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .fb-priority {
+      flex: 1;
+      background: var(--black);
+      border: none;
+      color: rgba(255,255,255,0.65);
+      padding: 12px 8px;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .fb-priority + .fb-priority { border-left: 1px solid var(--border-dark); }
+    .fb-priority:hover { background: #131210; color: var(--text-on-dark); }
+    .fb-priority.active { background: var(--gold); color: #fff; }
+
+    .fb-submit {
+      width: 100%;
+      padding: 16px;
+      background: var(--gold);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .fb-submit:hover:not(:disabled) { background: var(--gold-light); }
+    .fb-submit:active:not(:disabled) { transform: scale(0.99); }
+    .fb-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .fb-note { font-size: 12px; color: rgba(255,255,255,0.4); text-align: center; margin-top: 18px; }
+    .fb-error { color: #e86464; font-size: 14px; text-align: center; margin-top: 12px; }
+
+    .fb-success {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .fb-success-icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(158,125,35,0.15);
+      border: 1px solid var(--gold-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+    .fb-success h2 {
+      font-family: var(--font-display);
+      font-size: 32px;
+      color: var(--text-on-dark);
+      margin-bottom: 12px;
+    }
+    .fb-success p { color: rgba(255,255,255,0.6); margin-bottom: 24px; }
+    .fb-success button {
+      background: transparent;
+      border: 1px solid var(--gold-light);
+      color: var(--gold-light);
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .fb-success button:hover { background: rgba(158,125,35,0.1); }
+
+    @media (max-width: 600px) {
+      .fb-types { grid-template-columns: repeat(2, 1fr); }
+      .fb-type-desc { display: none; }
+      .fb-row { grid-template-columns: 1fr; gap: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="AmiSa Home">
+        <span class="nav__logo-name">AmiSa</span>
+        <span class="nav__logo-sub">Interior Wall Design</span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="services.html" class="nav__link">Services</a></li>
+        <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+        <li><a href="testimonials.html" class="nav__link">Reviews</a></li>
+        <li><a href="contact.html" class="nav__link">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn--gold nav__cta">Get Free Quote</a>
+      <button class="nav__burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav__overlay" role="dialog" aria-label="Mobile menu">
+    <a href="index.html" class="nav__link">Home</a>
+    <a href="about.html" class="nav__link">About</a>
+    <a href="services.html" class="nav__link">Services</a>
+    <a href="gallery.html" class="nav__link">Gallery</a>
+    <a href="testimonials.html" class="nav__link">Reviews</a>
+    <a href="contact.html" class="nav__link">Contact</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div style="background:var(--dark); border-bottom:1px solid rgba(255,255,255,0.06);">
+    <div class="page-hero">
+      <span class="eyebrow">Client Portal</span>
+      <h1>Request an <em style="font-style:italic; color:var(--gold-light);">Update</em></h1>
+      <p>Need something changed on your website? Fill out the form below and your request will land directly with the team.</p>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <section class="section section--darker">
+    <div class="fb-wrap">
+      <div class="fb-card" id="fb-card">
+
+        <form id="fb-form" novalidate>
+          <div class="fb-field">
+            <label class="fb-label" for="fb-business">Business Name <span class="fb-req">*</span></label>
+            <input id="fb-business" class="fb-input" type="text" required placeholder="e.g. AmiSa Interior Wall Design" />
+          </div>
+
+          <div class="fb-field">
+            <span class="fb-label">What type of change? <span class="fb-req">*</span></span>
+            <div class="fb-types" role="group" aria-label="Request type">
+              <button type="button" class="fb-type" data-type="Content Change">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18M7 14h10"/></svg>
+                <span>Content</span>
+                <span class="fb-type-desc">Update text or info</span>
+              </button>
+              <button type="button" class="fb-type" data-type="Design Tweak">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3a9 9 0 1 0 9 9c0-1.66-1.34-3-3-3h-2a3 3 0 0 1-3-3V5a2 2 0 0 0-1-2Z"/><circle cx="7.5" cy="10.5" r=".9" fill="currentColor"/><circle cx="12" cy="7.5" r=".9" fill="currentColor"/><circle cx="16.5" cy="10.5" r=".9" fill="currentColor"/></svg>
+                <span>Design</span>
+                <span class="fb-type-desc">Colors or styling</span>
+              </button>
+              <button type="button" class="fb-type" data-type="Bug / Issue">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="6" width="8" height="12" rx="4"/><path d="M12 18v3M4 11h4M16 11h4M5 5l3 3M19 5l-3 3M4 18l3-2M20 18l-3-2"/></svg>
+                <span>Bug</span>
+                <span class="fb-type-desc">Something's broken</span>
+              </button>
+              <button type="button" class="fb-type" data-type="New Feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5ZM19 14l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2Z"/></svg>
+                <span>New Feature</span>
+                <span class="fb-type-desc">Add something new</span>
+              </button>
+              <button type="button" class="fb-type" data-type="Other">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg>
+                <span>Other</span>
+                <span class="fb-type-desc">Anything else</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="fb-row">
+            <div>
+              <span class="fb-label">Priority</span>
+              <div class="fb-priorities" role="group" aria-label="Priority">
+                <button type="button" class="fb-priority" data-priority="Low">Low</button>
+                <button type="button" class="fb-priority active" data-priority="Medium">Medium</button>
+                <button type="button" class="fb-priority" data-priority="High">High</button>
+              </div>
+            </div>
+            <div>
+              <label class="fb-label" for="fb-section">Page / Section</label>
+              <input id="fb-section" class="fb-input" type="text" placeholder="e.g. Home, Gallery" />
+            </div>
+          </div>
+
+          <div class="fb-field">
+            <label class="fb-label" for="fb-desc">Describe the change <span class="fb-req">*</span></label>
+            <textarea id="fb-desc" class="fb-textarea" required placeholder="Please describe what you'd like changed in as much detail as possible..."></textarea>
+          </div>
+
+          <button type="submit" class="fb-submit" id="fb-submit">Submit Request</button>
+          <div class="fb-error" id="fb-error" style="display:none;"></div>
+          <p class="fb-note">Your request will be reviewed by the team and you'll receive updates as we work on it.</p>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__bottom">
+      <div class="footer__bottom-inner">
+        <p>© 2025 AmiSa Interior Wall Design. All rights reserved.</p>
+        <p>Houston, TX &nbsp;·&nbsp; <a href="tel:+14085165793" style="color:rgba(255,255,255,0.8);">408-516-5793</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+  (function() {
+    var form = document.getElementById('fb-form');
+    var card = document.getElementById('fb-card');
+    var submitBtn = document.getElementById('fb-submit');
+    var errorEl = document.getElementById('fb-error');
+
+    var selectedType = null;
+    var selectedPriority = 'Medium';
+
+    document.querySelectorAll('.fb-type').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.fb-type').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        selectedType = btn.getAttribute('data-type');
+      });
+    });
+
+    document.querySelectorAll('.fb-priority').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.fb-priority').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        selectedPriority = btn.getAttribute('data-priority');
+      });
+    });
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      errorEl.style.display = 'none';
+
+      var businessName = document.getElementById('fb-business').value.trim();
+      var pageSection = document.getElementById('fb-section').value.trim();
+      var description = document.getElementById('fb-desc').value.trim();
+
+      if (!businessName || !selectedType || !description) {
+        errorEl.textContent = 'Please fill in business name, request type, and description.';
+        errorEl.style.display = 'block';
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+
+      try {
+        var res = await fetch('/api/feedback', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            businessName: businessName,
+            requestType: selectedType,
+            priority: selectedPriority,
+            pageSection: pageSection,
+            description: description,
+          }),
+        });
+        if (!res.ok) throw new Error('Request failed');
+
+        card.innerHTML = '<div class="fb-success">' +
+          '<div class="fb-success-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9e7d23" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg></div>' +
+          '<h2>Request Submitted</h2>' +
+          '<p>Your request has been logged. We\'ll be in touch with updates.</p>' +
+          '<button type="button" onclick="location.reload()">Submit another request</button>' +
+          '</div>';
+      } catch (err) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Request';
+        errorEl.textContent = 'Something went wrong. Please try again or email us directly.';
+        errorEl.style.display = 'block';
+      }
+    });
+  })();
+  </script>
+</body>
+</html>
